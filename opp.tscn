@@ -1,0 +1,34 @@
+[gd_scene load_steps=5 format=3 uid="uid://btll2n4er5n1d"]
+
+[ext_resource type="Script" uid="uid://n44srs22wc80" path="res://opp.gd" id="1_8182q"]
+[ext_resource type="Texture2D" uid="uid://mqhhcu07vl7h" path="res://Assets/2d_lights_and_shadows_neutral_point_light.webp" id="1_rioyr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8182q"]
+size = Vector2(102, 102)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_h02yy"]
+radius = 671.193
+
+[node name="Opp" type="Node2D"]
+
+[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+script = ExtResource("1_8182q")
+
+[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+position = Vector2(0, -2)
+scale = Vector2(0.4, 0.4)
+texture = ExtResource("1_rioyr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
+position = Vector2(0, -2)
+shape = SubResource("RectangleShape2D_8182q")
+
+[node name="Detection Area" type="Area2D" parent="CharacterBody2D"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D/Detection Area"]
+light_mask = 2
+visibility_layer = 2
+shape = SubResource("CircleShape2D_h02yy")
+
+[connection signal="body_entered" from="CharacterBody2D/Detection Area" to="." method="_on_detection_area_body_entered"]
+[connection signal="body_exited" from="CharacterBody2D/Detection Area" to="." method="_on_detection_area_body_exited"]
