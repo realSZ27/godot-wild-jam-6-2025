@@ -21,10 +21,11 @@ position = Vector2(-0.5, -0.5)
 shape = SubResource("RectangleShape2D_onrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
-scale = Vector2(0.5, 0.5)
+scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_i3pqv")
 
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
+zoom = Vector2(1.5, 1.5)
 script = SubResource("GDScript_onrkg")
 
 [node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D"]

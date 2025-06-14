@@ -35,6 +35,7 @@ occluder = SubResource("OccluderPolygon2D_tfbhh")
 position = Vector2(579, 546)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
+visible = false
 position = Vector2(183.501, 62.999)
 scale = Vector2(85.5273, 58.5)
 color = Color(0, 0, 0, 1)
