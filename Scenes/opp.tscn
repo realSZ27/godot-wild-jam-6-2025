@@ -34,10 +34,12 @@ collision_mask = 3
 position = Vector2(465, -9.49999)
 rotation = -1.5708
 scale = Vector2(1.5625, 3.60547)
+color = Color(1, 0.0405029, 0.0223527, 1)
 shadow_enabled = true
 texture = SubResource("GradientTexture2D_vkm20")
 
 [node name="PointLight2D2" type="PointLight2D" parent="Lights"]
 position = Vector2(0, -2)
 scale = Vector2(2, -2.024)
+color = Color(1, 0.0392157, 0.0235294, 1)
 texture = ExtResource("3_r5pj3")

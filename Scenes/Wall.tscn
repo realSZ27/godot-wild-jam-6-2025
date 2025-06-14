@@ -45,6 +45,4 @@ rotation = 0.206709
 scale = Vector2(0.3, 0.3)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
-position = Vector2(183.501, 62.999)
-scale = Vector2(85.5273, 58.5)
 color = Color(0, 0, 0, 1)

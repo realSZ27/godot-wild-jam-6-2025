@@ -1,35 +1,74 @@
-[gd_scene load_steps=6 format=3 uid="uid://cd3jtnc7tho6y"]
+[gd_scene load_steps=10 format=3 uid="uid://cd3jtnc7tho6y"]
 
 [ext_resource type="Script" uid="uid://cwjtftijex5s5" path="res://Scripts/movement.gd" id="1_onrkg"]
-[ext_resource type="Texture2D" uid="uid://xcqbg2cae1b7" path="res://Assets/images/icon.svg" id="2_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://bgvhvwotk11ib" path="res://Assets/images/character.png" id="2_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://mqhhcu07vl7h" path="res://Assets/images/2d_lights_and_shadows_neutral_point_light.webp" id="3_i3pqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
-size = Vector2(37, 38)
+size = Vector2(49, 57)
 
-[sub_resource type="GDScript" id="GDScript_onrkg"]
-script/source = "extends Camera2D
-"
+[sub_resource type="AtlasTexture" id="AtlasTexture_vgqql"]
+atlas = ExtResource("2_6t5aa")
+region = Rect2(0, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_fkybt"]
+atlas = ExtResource("2_6t5aa")
+region = Rect2(32, 0, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_x3wgy"]
+atlas = ExtResource("2_6t5aa")
+region = Rect2(0, 32, 32, 32)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_3smsa"]
+atlas = ExtResource("2_6t5aa")
+region = Rect2(32, 32, 32, 32)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_8erm5"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_vgqql")
+}],
+"loop": true,
+"name": &"Player Idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_fkybt")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_x3wgy")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_3smsa")
+}],
+"loop": true,
+"name": &"Player Walk",
+"speed": 10.0
+}]
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_mask = 2
 script = ExtResource("1_onrkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 0)
+position = Vector2(-2.5, 1.5)
 shape = SubResource("RectangleShape2D_onrkg")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-light_mask = 2
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
 visibility_layer = 2
-scale = Vector2(0.3, 0.3)
-texture = ExtResource("2_i3pqv")
+scale = Vector2(1.9375, 1.9375)
+sprite_frames = SubResource("SpriteFrames_8erm5")
+animation = &"Player Idle"
 
 [node name="Camera2D" type="Camera2D" parent="."]
-script = SubResource("GDScript_onrkg")
+position_smoothing_enabled = true
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 scale = Vector2(50.434, 50.434)
 shadow_enabled = true
 texture = ExtResource("3_i3pqv")
 texture_scale = 0.09
+
+[node name="ShaderGlobalsOverride" type="ShaderGlobalsOverride" parent="."]
