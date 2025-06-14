@@ -1,7 +1,7 @@
 extends Control
 
 @onready var buttons := $PanelContainer/HBoxContainer.get_children()
-
+signal active_ability(ability_index)
 
 func _input(event: InputEvent) -> void:
 	if event is InputEventKey and event.pressed and !event.is_echo():
@@ -14,4 +14,4 @@ func toggle_slot(i: int) -> void:
 	for index in range(buttons.size()):
 		if index != i:
 			buttons[index].button_pressed = false 
-	emit_signal("active_ability", i)
+	active_ability.emit(i)
