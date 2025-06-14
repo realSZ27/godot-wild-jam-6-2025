@@ -49,7 +49,7 @@ animations = [{
 }]
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
-collision_mask = 2
+collision_layer = 2
 script = ExtResource("1_onrkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -68,6 +68,7 @@ position_smoothing_enabled = true
 [node name="PointLight2D" type="PointLight2D" parent="."]
 scale = Vector2(50.434, 50.434)
 shadow_enabled = true
+shadow_color = Color(0, 0, 0, 0.72549)
 texture = ExtResource("3_i3pqv")
 texture_scale = 0.09
 

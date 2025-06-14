@@ -15,6 +15,10 @@ run/main_scene="uid://8cdppyqvgj0d"
 config/features=PackedStringArray("4.4", "Forward Plus")
 config/icon="res://Assets/images/icon.svg"
 
+[autoload]
+
+BetterTerrain="*res://addons/better-terrain/BetterTerrain.gd"
+
 [display]
 
 window/stretch/mode="viewport"
@@ -24,6 +28,10 @@ window/stretch/scale_mode="integer"
 
 version_control/plugin_name="GitPlugin"
 version_control/autoload_on_startup=true
+
+[editor_plugins]
+
+enabled=PackedStringArray("res://addons/better-terrain/plugin.cfg")
 
 [input]
 
