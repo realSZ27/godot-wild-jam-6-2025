@@ -25,7 +25,7 @@ func _physics_process(delta: float) -> void:
 		 
 	# this is bullshit and made up i spent like 1000 hours trying to figure this out 
 	# everything else was easy its just this i hate angles so much 
-	# trigonometry can go fuck itself
+	# trigonometry can go fuck itself soh cah toa
 	#if (Vector2.RIGHT.rotated(rotation)).angle_to(vector_distance) > (fov / 2):
 	#	return
 	
