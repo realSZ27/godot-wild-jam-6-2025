@@ -1,10 +1,13 @@
-[gd_scene load_steps=4 format=3 uid="uid://cetcyxrutwirs"]
+[gd_scene load_steps=5 format=3 uid="uid://8cdppyqvgj0d"]
 
 [ext_resource type="Texture2D" uid="uid://xcqbg2cae1b7" path="res://icon.svg" id="1_l6igm"]
 [ext_resource type="PackedScene" uid="uid://cd3jtnc7tho6y" path="res://player.tscn" id="2_rytl6"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_rytl6"]
 size = Vector2(547, 127)
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_rytl6"]
+polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
 
 [node name="Node2D" type="Node2D"]
 
@@ -20,10 +23,21 @@ texture = ExtResource("1_l6igm")
 position = Vector2(-2.5, -0.5)
 shape = SubResource("RectangleShape2D_rytl6")
 
+[node name="LightOccluder2D" type="LightOccluder2D" parent="StaticBody2D"]
+position = Vector2(-2.49999, 0)
+scale = Vector2(4.25781, 1)
+occluder = SubResource("OccluderPolygon2D_rytl6")
+
 [node name="Player" parent="." instance=ExtResource("2_rytl6")]
 position = Vector2(-177, 73)
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 position = Vector2(183.501, 62.999)
 scale = Vector2(85.5273, 58.5)
-color = Color(0.0957402, 0.0962033, 0.0974697, 1)
+color = Color(0, 0, 0, 1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(3.00989, 91.8849)
+scale = Vector2(39.0467, 29.9393)
+texture = ExtResource("1_l6igm")
