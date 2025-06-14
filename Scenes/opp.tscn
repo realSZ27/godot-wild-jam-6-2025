@@ -1,6 +1,6 @@
 [gd_scene load_steps=6 format=3 uid="uid://btll2n4er5n1d"]
 
-[ext_resource type="Script" uid="uid://cyhdu0x4sippk" path="res://Scenes/enemy.gd" id="1_4oxmo"]
+[ext_resource type="Script" uid="uid://cyhdu0x4sippk" path="res://Scripts/enemy.gd" id="1_4oxmo"]
 [ext_resource type="Texture2D" uid="uid://xcqbg2cae1b7" path="res://Assets/images/icon.svg" id="2_4oxmo"]
 [ext_resource type="Texture2D" uid="uid://mqhhcu07vl7h" path="res://Assets/images/2d_lights_and_shadows_neutral_point_light.webp" id="3_r5pj3"]
 

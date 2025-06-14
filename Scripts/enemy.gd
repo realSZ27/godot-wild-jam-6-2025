@@ -5,7 +5,7 @@ extends CharacterBody2D
 @onready var ray := $RayCast2D
 var eye_sight_distance := 400.0
 var fov = PI / 2
-var speed := 200.0
+var speed := 100.0
 
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
