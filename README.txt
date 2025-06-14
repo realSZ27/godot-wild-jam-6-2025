@@ -1,2 +1,0 @@
-Hawk Tuah
-IUHG
