@@ -148,6 +148,13 @@ texture_region_size = Vector2i(32, 32)
 0:4/0 = 0
 0:4/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_mi044")
 0:4/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
+0:4/0/metadata/_better_terrain = {
+0: [0],
+4: [0],
+8: [0],
+12: [0],
+&"type": 0
+}
 0:3/0 = 0
 0:3/0/occlusion_layer_0/polygon_0/polygon = SubResource("OccluderPolygon2D_mi044")
 0:3/0/physics_layer_0/polygon_0/points = PackedVector2Array(-16, -16, 16, -16, 16, 16, -16, 16)
