@@ -20,9 +20,10 @@ func _physics_process(delta: float) -> void:
 		$Lights.visible = false
 	
 	var vector_distance = player.global_position - global_position
-	if  vector_distance.length() > 400 or vector_distance.length() < 50:
+	if  vector_distance.length() > 400:
 		return
-		 
+	elif vector_distance.length() < 50:
+		get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
 	# this is bullshit and made up i spent like 1000 hours trying to figure this out 
 	# everything else was easy its just this i hate angles so much 
 	# trigonometry can go fuck itself soh cah toa
