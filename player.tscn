@@ -5,7 +5,7 @@
 [ext_resource type="Texture2D" uid="uid://mqhhcu07vl7h" path="res://Assets/2d_lights_and_shadows_neutral_point_light.webp" id="3_i3pqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
-size = Vector2(63, 63)
+size = Vector2(37, 38)
 
 [sub_resource type="GDScript" id="GDScript_onrkg"]
 script/source = "extends Camera2D
@@ -17,7 +17,7 @@ script/source = "extends Camera2D
 script = ExtResource("1_onrkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="CharacterBody2D"]
-position = Vector2(-0.5, -0.5)
+position = Vector2(-0.5, 0)
 shape = SubResource("RectangleShape2D_onrkg")
 
 [node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
