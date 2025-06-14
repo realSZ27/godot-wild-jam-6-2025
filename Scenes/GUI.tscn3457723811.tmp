@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://64k5uyyvn03v"]
+
+[ext_resource type="PackedScene" uid="uid://bpsvfcmrwwb0d" path="res://Scenes/HotbarButton.tscn" id="1_1074w"]
+[ext_resource type="Script" uid="uid://tmpnkbnfxp15" path="res://Scripts/hotbar.gd" id="1_ptolr"]
+
+[node name="GUI" type="CanvasLayer"]
+
+[node name="Hotbar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1.0
+offset_bottom = -2.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_ptolr")
+
+[node name="PanelContainer" type="PanelContainer" parent="Hotbar"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_right = -1127.0
+offset_bottom = -646.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Hotbar/PanelContainer"]
+layout_mode = 2
+
+[node name="Control" parent="Hotbar/PanelContainer/HBoxContainer" instance=ExtResource("1_1074w")]
+layout_mode = 2
+
+[node name="Control2" parent="Hotbar/PanelContainer/HBoxContainer" instance=ExtResource("1_1074w")]
+layout_mode = 2
+
+[node name="Control3" parent="Hotbar/PanelContainer/HBoxContainer" instance=ExtResource("1_1074w")]
+layout_mode = 2
+
+[node name="Control4" parent="Hotbar/PanelContainer/HBoxContainer" instance=ExtResource("1_1074w")]
+layout_mode = 2
+
+[node name="Control5" parent="Hotbar/PanelContainer/HBoxContainer" instance=ExtResource("1_1074w")]
+layout_mode = 2
+
+[node name="Control6" parent="Hotbar/PanelContainer/HBoxContainer" instance=ExtResource("1_1074w")]
+layout_mode = 2
+
+[node name="Control7" parent="Hotbar/PanelContainer/HBoxContainer" instance=ExtResource("1_1074w")]
+layout_mode = 2

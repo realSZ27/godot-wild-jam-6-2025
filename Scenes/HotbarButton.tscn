@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3 uid="uid://bpsvfcmrwwb0d"]
+
+[ext_resource type="Texture2D" uid="uid://xcqbg2cae1b7" path="res://Assets/images/icon.svg" id="1_t8jim"]
+[ext_resource type="Texture2D" uid="uid://mqhhcu07vl7h" path="res://Assets/images/2d_lights_and_shadows_neutral_point_light.webp" id="2_0becq"]
+
+[node name="TextureButton" type="TextureButton"]
+offset_right = 128.0
+offset_bottom = 128.0
+texture_normal = ExtResource("1_t8jim")
+texture_hover = ExtResource("2_0becq")
+
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_right = 127.0
+offset_bottom = 127.0
+text = "Ability"
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
+offset_right = 126.0
+offset_bottom = 128.0
+color = Color(1, 1, 1, 0.176471)

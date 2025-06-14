@@ -1,8 +1,9 @@
-[gd_scene load_steps=4 format=4 uid="uid://8cdppyqvgj0d"]
+[gd_scene load_steps=5 format=4 uid="uid://8cdppyqvgj0d"]
 
 [ext_resource type="PackedScene" uid="uid://cd3jtnc7tho6y" path="res://Scenes/player.tscn" id="2_3610a"]
 [ext_resource type="TileSet" uid="uid://d31t83syjr8ix" path="res://Assets/resources/outside ground tileset.tres" id="3_j0e8j"]
 [ext_resource type="PackedScene" uid="uid://btll2n4er5n1d" path="res://Scenes/opp.tscn" id="4_3610a"]
+[ext_resource type="PackedScene" uid="uid://64k5uyyvn03v" path="res://Scenes/GUI.tscn" id="4_j0e8j"]
 
 [node name="Node2D" type="Node2D"]
 
@@ -22,3 +23,5 @@ collision_mask = 3
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
+
+[node name="CanvasLayer" parent="." instance=ExtResource("4_j0e8j")]

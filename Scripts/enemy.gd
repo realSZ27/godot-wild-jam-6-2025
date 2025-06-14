@@ -13,19 +13,16 @@ func _ready() -> void:
 func _physics_process(delta: float) -> void:
 	ray.target_position = ray.to_local(player.global_position)
 	
-	# turns off lights so you cant see them through walls
+	#turns off lights so you cant see them through walls
 	if ray.get_collider() == player:
 		$Lights.visible = true
 	else:
 		$Lights.visible = false
 	
 	var vector_distance = player.global_position - global_position
-	if  vector_distance.length() > 400:
+	if  vector_distance.length() > 400 or vector_distance.length() < 50:
 		return
-	
-	if vector_distance.length() < 150:
-		chase(vector_distance, delta)
-	
+		 
 	# this is bullshit and made up i spent like 1000 hours trying to figure this out 
 	# everything else was easy its just this i hate angles so much 
 	# trigonometry can go fuck itself
@@ -36,9 +33,9 @@ func _physics_process(delta: float) -> void:
 	if !ray.is_colliding() or ray.get_collider() != player:
 		return
 	
-	chase(vector_distance, delta)
+	chase(vector_distance)
 	
-func chase(vector_distance, delta) -> void:
+func chase(vector_distance) -> void:
 	# this works fine it just looks a bit jittery when youre super upclose
 	# obv that wouldnt happen during the game but just wanted to mention
 	# its kinda annoying
