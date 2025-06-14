@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://mqhhcu07vl7h"
-path="res://.godot/imported/2d_lights_and_shadows_neutral_point_light.webp-7c52078d91b8c02803a1fd59fbc4c252.ctex"
+uid="uid://jmay1qulcqkv"
+path="res://.godot/imported/outside ground.png-c418f7ba1e48b1a02f5f92da1f64a528.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/2d_lights_and_shadows_neutral_point_light.webp"
-dest_files=["res://.godot/imported/2d_lights_and_shadows_neutral_point_light.webp-7c52078d91b8c02803a1fd59fbc4c252.ctex"]
+source_file="res://Assets/outside ground.png"
+dest_files=["res://.godot/imported/outside ground.png-c418f7ba1e48b1a02f5f92da1f64a528.ctex"]
 
 [params]
 
