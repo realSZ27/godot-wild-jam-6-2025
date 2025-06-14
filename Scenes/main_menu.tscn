@@ -1,0 +1,23 @@
+[gd_scene load_steps=2 format=3 uid="uid://gjte3ggftvk4"]
+
+[sub_resource type="Theme" id="Theme_rhts7"]
+default_base_scale = 0.75
+
+[node name="Main Menu" type="CanvasLayer"]
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+scale = Vector2(28.7436, 16.1714)
+
+[node name="MenuButton" type="Button" parent="Control"]
+layout_mode = 0
+offset_left = 0.243533
+offset_top = 9.21378
+offset_right = 41.2435
+offset_bottom = 40.2138
+scale = Vector2(0.102081, 0.131735)
+theme = SubResource("Theme_rhts7")
+text = "Play"

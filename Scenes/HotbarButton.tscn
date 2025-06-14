@@ -1,13 +1,15 @@
 [gd_scene load_steps=3 format=3 uid="uid://bpsvfcmrwwb0d"]
 
 [ext_resource type="Texture2D" uid="uid://xcqbg2cae1b7" path="res://Assets/images/icon.svg" id="1_t8jim"]
-[ext_resource type="Texture2D" uid="uid://mqhhcu07vl7h" path="res://Assets/images/2d_lights_and_shadows_neutral_point_light.webp" id="2_0becq"]
+[ext_resource type="Texture2D" uid="uid://45r1j00ustfm" path="res://Assets/images/Screenshot 2025-06-14 171650.png" id="2_t8jim"]
 
 [node name="TextureButton" type="TextureButton"]
 offset_right = 128.0
 offset_bottom = 128.0
+toggle_mode = true
+action_mode = 0
 texture_normal = ExtResource("1_t8jim")
-texture_hover = ExtResource("2_0becq")
+texture_pressed = ExtResource("2_t8jim")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0

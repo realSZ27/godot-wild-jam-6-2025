@@ -33,23 +33,26 @@ grow_vertical = 0
 [node name="HBoxContainer" type="HBoxContainer" parent="Hotbar/PanelContainer"]
 layout_mode = 2
 
-[node name="Control" parent="Hotbar/PanelContainer/HBoxContainer" instance=ExtResource("1_1074w")]
+[node name="TextureButton" parent="Hotbar/PanelContainer/HBoxContainer" instance=ExtResource("1_1074w")]
 layout_mode = 2
 
-[node name="Control2" parent="Hotbar/PanelContainer/HBoxContainer" instance=ExtResource("1_1074w")]
+[node name="TextureButton2" parent="Hotbar/PanelContainer/HBoxContainer" instance=ExtResource("1_1074w")]
 layout_mode = 2
 
-[node name="Control3" parent="Hotbar/PanelContainer/HBoxContainer" instance=ExtResource("1_1074w")]
+[node name="TextureButton3" parent="Hotbar/PanelContainer/HBoxContainer" instance=ExtResource("1_1074w")]
 layout_mode = 2
 
-[node name="Control4" parent="Hotbar/PanelContainer/HBoxContainer" instance=ExtResource("1_1074w")]
+[node name="TextureButton4" parent="Hotbar/PanelContainer/HBoxContainer" instance=ExtResource("1_1074w")]
 layout_mode = 2
 
-[node name="Control5" parent="Hotbar/PanelContainer/HBoxContainer" instance=ExtResource("1_1074w")]
+[node name="TextureButton5" parent="Hotbar/PanelContainer/HBoxContainer" instance=ExtResource("1_1074w")]
 layout_mode = 2
 
-[node name="Control6" parent="Hotbar/PanelContainer/HBoxContainer" instance=ExtResource("1_1074w")]
+[node name="TextureButton6" parent="Hotbar/PanelContainer/HBoxContainer" instance=ExtResource("1_1074w")]
 layout_mode = 2
 
-[node name="Control7" parent="Hotbar/PanelContainer/HBoxContainer" instance=ExtResource("1_1074w")]
+[node name="TextureButton7" parent="Hotbar/PanelContainer/HBoxContainer" instance=ExtResource("1_1074w")]
+layout_mode = 2
+
+[node name="TextureButton8" parent="Hotbar/PanelContainer/HBoxContainer" instance=ExtResource("1_1074w")]
 layout_mode = 2
