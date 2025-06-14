@@ -1,7 +1,7 @@
 [gd_scene load_steps=5 format=3 uid="uid://btll2n4er5n1d"]
 
-[ext_resource type="Script" uid="uid://n44srs22wc80" path="res://opp.gd" id="1_8182q"]
-[ext_resource type="Texture2D" uid="uid://mqhhcu07vl7h" path="res://Assets/2d_lights_and_shadows_neutral_point_light.webp" id="1_rioyr"]
+[ext_resource type="Script" uid="uid://n44srs22wc80" path="res://Scripts/opp.gd" id="1_8182q"]
+[ext_resource type="Texture2D" uid="uid://mqhhcu07vl7h" path="res://Assets/images/2d_lights_and_shadows_neutral_point_light.webp" id="1_rioyr"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_8182q"]
 size = Vector2(102, 102)

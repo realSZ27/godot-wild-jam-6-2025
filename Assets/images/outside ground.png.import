@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://jmay1qulcqkv"
-path="res://.godot/imported/outside ground.png-c418f7ba1e48b1a02f5f92da1f64a528.ctex"
+path="res://.godot/imported/outside ground.png-38cd1c75c82840fad4ca688ce976bf18.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/outside ground.png"
-dest_files=["res://.godot/imported/outside ground.png-c418f7ba1e48b1a02f5f92da1f64a528.ctex"]
+source_file="res://Assets/images/outside ground.png"
+dest_files=["res://.godot/imported/outside ground.png-38cd1c75c82840fad4ca688ce976bf18.ctex"]
 
 [params]
 
