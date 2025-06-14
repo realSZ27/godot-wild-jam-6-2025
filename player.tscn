@@ -1,7 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://cd3jtnc7tho6y"]
+[gd_scene load_steps=7 format=3 uid="uid://cd3jtnc7tho6y"]
 
 [ext_resource type="Script" uid="uid://cwjtftijex5s5" path="res://Scripts/movement.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://xcqbg2cae1b7" path="res://icon.svg" id="2_i3pqv"]
+[ext_resource type="Texture2D" uid="uid://d2lfqm1rpnfbl" path="res://Assets/2d_lights_and_shadows_neutral_point_light.webp" id="3_i3pqv"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(127, 126)
@@ -9,6 +10,9 @@ size = Vector2(127, 126)
 [sub_resource type="GDScript" id="GDScript_onrkg"]
 script/source = "extends Camera2D
 "
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_i3pqv"]
+polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
 
 [node name="Player" type="Node2D"]
 
@@ -25,6 +29,12 @@ texture = ExtResource("2_i3pqv")
 [node name="Camera2D" type="Camera2D" parent="CharacterBody2D"]
 script = SubResource("GDScript_onrkg")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
-position = Vector2(288, -1)
-texture = ExtResource("2_i3pqv")
+[node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D"]
+position = Vector2(-2, 5.00001)
+scale = Vector2(85.5273, 58.5)
+shadow_enabled = true
+texture = ExtResource("3_i3pqv")
+texture_scale = 2.0
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="CharacterBody2D"]
+occluder = SubResource("OccluderPolygon2D_i3pqv")
