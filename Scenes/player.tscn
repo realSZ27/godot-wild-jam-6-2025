@@ -11,7 +11,8 @@ size = Vector2(37, 38)
 script/source = "extends Camera2D
 "
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
+collision_mask = 2
 script = ExtResource("1_onrkg")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -25,7 +26,6 @@ scale = Vector2(0.3, 0.3)
 texture = ExtResource("2_i3pqv")
 
 [node name="Camera2D" type="Camera2D" parent="."]
-zoom = Vector2(1.5, 1.5)
 script = SubResource("GDScript_onrkg")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]

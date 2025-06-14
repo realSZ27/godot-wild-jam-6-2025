@@ -1,8 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://btll2n4er5n1d"]
+[gd_scene load_steps=5 format=3 uid="uid://btll2n4er5n1d"]
 
 [ext_resource type="Script" uid="uid://cyhdu0x4sippk" path="res://Scenes/enemy.gd" id="1_4oxmo"]
 [ext_resource type="Texture2D" uid="uid://xcqbg2cae1b7" path="res://Assets/images/icon.svg" id="2_4oxmo"]
-[ext_resource type="Texture2D" uid="uid://mqhhcu07vl7h" path="res://Assets/images/2d_lights_and_shadows_neutral_point_light.webp" id="3_r5pj3"]
 
 [sub_resource type="Curve" id="Curve_4oxmo"]
 _data = [Vector2(0, 1), 0.0, 0.0, 0, 0, Vector2(1, 0.235955), 0.0, 0.0, 0, 0]
@@ -31,8 +30,3 @@ texture = SubResource("CurveTexture_4oxmo")
 
 [node name="RayCast2D" type="RayCast2D" parent="CharacterBody2D"]
 collision_mask = 3
-
-[node name="PointLight2D2" type="PointLight2D" parent="CharacterBody2D"]
-position = Vector2(0, -2)
-scale = Vector2(2, -2.024)
-texture = ExtResource("3_r5pj3")
