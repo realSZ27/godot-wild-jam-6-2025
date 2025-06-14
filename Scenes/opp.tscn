@@ -11,28 +11,29 @@ point_count = 2
 [sub_resource type="CurveTexture" id="CurveTexture_4oxmo"]
 curve = SubResource("Curve_4oxmo")
 
-[node name="Opp" type="Node2D"]
-
-[node name="CharacterBody2D" type="CharacterBody2D" parent="."]
+[node name="Opp" type="CharacterBody2D"]
+physics_interpolation_mode = 1
 collision_mask = 2
 script = ExtResource("1_4oxmo")
 
-[node name="Sprite2D" type="Sprite2D" parent="CharacterBody2D"]
+[node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("2_4oxmo")
 
-[node name="Body" type="CollisionPolygon2D" parent="CharacterBody2D"]
+[node name="Body" type="CollisionPolygon2D" parent="."]
 polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
 
-[node name="PointLight2D" type="PointLight2D" parent="CharacterBody2D"]
+[node name="RayCast2D" type="RayCast2D" parent="."]
+collision_mask = 3
+
+[node name="Lights" type="Node2D" parent="."]
+
+[node name="PointLight2D" type="PointLight2D" parent="Lights"]
 position = Vector2(465, -9.49999)
 scale = Vector2(3.17969, 263)
 shadow_enabled = true
 texture = SubResource("CurveTexture_4oxmo")
 
-[node name="RayCast2D" type="RayCast2D" parent="CharacterBody2D"]
-collision_mask = 3
-
-[node name="PointLight2D2" type="PointLight2D" parent="CharacterBody2D"]
+[node name="PointLight2D2" type="PointLight2D" parent="Lights"]
 position = Vector2(0, -2)
 scale = Vector2(2, -2.024)
 texture = ExtResource("3_r5pj3")

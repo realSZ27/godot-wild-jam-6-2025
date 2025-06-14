@@ -29,6 +29,12 @@ func _physics_process(delta: float) -> void:
 	
 	# makes it so they cant see you through walls n shit
 	ray.target_position = ray.to_local(player.global_position)
+	
+	if ray.get_collider() == player:
+		$Lights.visible = true
+	else:
+		$Lights.visible = false
+	
 	if !ray.is_colliding() or ray.get_collider() != player:
 		return
 	
