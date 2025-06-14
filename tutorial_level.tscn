@@ -1,0 +1,40 @@
+[gd_scene load_steps=4 format=3 uid="uid://cn146lkn3xby"]
+
+[ext_resource type="Texture2D" uid="uid://xcqbg2cae1b7" path="res://icon.svg" id="1_tfbhh"]
+[ext_resource type="PackedScene" uid="uid://cd3jtnc7tho6y" path="res://player.tscn" id="2_3hotv"]
+
+[sub_resource type="OccluderPolygon2D" id="OccluderPolygon2D_tfbhh"]
+polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
+
+[node name="Tutorial Level" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(349.001, 1072)
+scale = Vector2(128.234, 65.7344)
+texture = ExtResource("1_tfbhh")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="StaticBody2D"]
+position = Vector2(825, 323)
+scale = Vector2(0.90625, 5.04688)
+texture = ExtResource("1_tfbhh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(825, 323)
+scale = Vector2(0.90625, 5.04688)
+polygon = PackedVector2Array(59.1, -64, -59, -64, -63.8, -59, -64, 61, -60.3, 64, 59.6, 64, 63.9, 59, 64, -61.1)
+
+[node name="LightOccluder2D" type="LightOccluder2D" parent="StaticBody2D"]
+position = Vector2(825, 323)
+scale = Vector2(0.90625, 5.04688)
+occluder = SubResource("OccluderPolygon2D_tfbhh")
+
+[node name="Player" parent="." instance=ExtResource("2_3hotv")]
+position = Vector2(579, 546)
+
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+position = Vector2(183.501, 62.999)
+scale = Vector2(85.5273, 58.5)
+color = Color(0, 0, 0, 1)
