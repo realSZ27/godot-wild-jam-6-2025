@@ -17,11 +17,10 @@ tile_set = ExtResource("3_j0e8j")
 
 [node name="Opp" parent="." instance=ExtResource("4_3610a")]
 position = Vector2(-77, -305)
-rotation = 0.206709
 scale = Vector2(0.3, 0.3)
 collision_mask = 3
 
 [node name="CanvasModulate" type="CanvasModulate" parent="."]
 color = Color(0, 0, 0, 1)
 
-[node name="CanvasLayer" parent="." instance=ExtResource("4_j0e8j")]
+[node name="GUI" parent="." instance=ExtResource("4_j0e8j")]
