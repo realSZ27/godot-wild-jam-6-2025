@@ -23,7 +23,7 @@ func _physics_process(delta: float) -> void:
 	if  vector_distance.length() > 400:
 		return
 	elif vector_distance.length() < 55:
-		get_tree().change_scene_to_file("res://Scenes/MainMenu.tscn")
+		get_tree().change_scene_to_file("res://Scenes/death_screen.tscn")
 	# this is bullshit and made up i spent like 1000 hours trying to figure this out 
 	# everything else was easy its just this i hate angles so much 
 	# trigonometry can go fuck itself soh cah toa

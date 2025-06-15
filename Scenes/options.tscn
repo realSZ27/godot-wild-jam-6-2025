@@ -19,6 +19,7 @@ offset_right = 320.0
 offset_bottom = 256.0
 
 [node name="HSlider3" type="HSlider" parent="."]
+layout_mode = 0
 offset_left = 64.0
 offset_top = 288.0
 offset_right = 320.0
@@ -43,6 +44,7 @@ theme_override_font_sizes/font_size = 36
 text = "Music"
 
 [node name="Label3" type="Label" parent="."]
+layout_mode = 0
 offset_left = 64.0
 offset_top = 264.0
 offset_right = 320.0
@@ -51,6 +53,7 @@ theme_override_font_sizes/font_size = 36
 text = "Sound Effects"
 
 [node name="Label4" type="Label" parent="."]
+layout_mode = 0
 offset_left = 712.0
 offset_top = 144.0
 offset_right = 968.0
