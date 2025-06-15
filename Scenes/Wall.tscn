@@ -3,7 +3,7 @@
 [ext_resource type="PackedScene" uid="uid://cd3jtnc7tho6y" path="res://Scenes/player.tscn" id="2_3610a"]
 [ext_resource type="TileSet" uid="uid://d31t83syjr8ix" path="res://Assets/resources/outside ground tileset.tres" id="3_j0e8j"]
 [ext_resource type="PackedScene" uid="uid://btll2n4er5n1d" path="res://Scenes/opp.tscn" id="4_3610a"]
-[ext_resource type="PackedScene" uid="uid://64k5uyyvn03v" path="res://Scenes/GUI.tscn" id="4_j0e8j"]
+[ext_resource type="PackedScene" uid="uid://4baliq28n0vj" path="res://Scenes/GUI.tscn" id="4_j0e8j"]
 
 [node name="Node2D" type="Node2D"]
 
