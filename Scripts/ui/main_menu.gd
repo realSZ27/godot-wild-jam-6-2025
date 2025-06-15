@@ -1,14 +1,10 @@
 extends Control
 
 
-func _ready():
-	pass
 
-func _process(delta):
-	pass
 
 func _on_button_pressed():
-	get_tree().change_scene_to_file("res://Scenes/Wall.tscn")
+	get_tree().change_scene_to_file("res://Scenes/levels/Wall.tscn")
 
 
 func _on_quit_pressed():
@@ -17,5 +13,5 @@ func _on_quit_pressed():
 
 
 func _on_options_pressed():
-	get_tree().change_scene_to_file("res://Scenes/options.tscn")
+	get_tree().change_scene_to_file("res://Scenes/ui/options.tscn")
 	pass # Replace with function body.

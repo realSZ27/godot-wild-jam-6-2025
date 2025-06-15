@@ -38,7 +38,7 @@ func _physics_process(_delta: float) -> void:
 					$AnimatedSprite2D.frame = current_frame - 1
 					start_cooldown()
 	elif distance_length < 55:
-		get_tree().change_scene_to_file("res://Scenes/death_screen.tscn")
+		get_tree().change_scene_to_file("res://Scenes/ui/death_screen.tscn")
 	
 	if current_frame == 21:
 		# pathfinding

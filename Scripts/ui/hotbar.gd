@@ -14,7 +14,7 @@ func toggle_slot(i: int) -> void:
 	for index in range(buttons.size()):
 		if index != i:
 			buttons[index].button_pressed = false
-	active_ability.emit(i)
+	active_ability.emit(i + 1)
 	
 	var shineSprite = buttons[i].get_child(1)
 	shineSprite.play("shine")

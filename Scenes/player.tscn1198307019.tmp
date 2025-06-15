@@ -1,9 +1,8 @@
-[gd_scene load_steps=12 format=3 uid="uid://cd3jtnc7tho6y"]
+[gd_scene load_steps=10 format=3 uid="uid://cd3jtnc7tho6y"]
 
 [ext_resource type="Script" uid="uid://cwjtftijex5s5" path="res://Scripts/movement.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://bgvhvwotk11ib" path="res://Assets/images/character.png" id="2_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://mqhhcu07vl7h" path="res://Assets/images/2d_lights_and_shadows_neutral_point_light.webp" id="3_i3pqv"]
-[ext_resource type="Script" uid="uid://bv4d8vmmbgo4j" path="res://Scripts/playerSprite.gd" id="3_vgqql"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
 size = Vector2(49, 57)
@@ -49,9 +48,6 @@ animations = [{
 "speed": 10.0
 }]
 
-[sub_resource type="CircleShape2D" id="CircleShape2D_vgqql"]
-radius = 577.541
-
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
 collision_layer = 2
 script = ExtResource("1_onrkg")
@@ -65,7 +61,6 @@ visibility_layer = 2
 scale = Vector2(1.9375, 1.9375)
 sprite_frames = SubResource("SpriteFrames_8erm5")
 animation = &"Player Idle"
-script = ExtResource("3_vgqql")
 
 [node name="Camera2D" type="Camera2D" parent="."]
 position_smoothing_enabled = true
@@ -76,47 +71,3 @@ shadow_enabled = true
 shadow_color = Color(0, 0, 0, 0.72549)
 texture = ExtResource("3_i3pqv")
 texture_scale = 0.09
-
-[node name="RayCast2D" type="RayCast2D" parent="."]
-
-[node name="GlowAbilityRange" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="GlowAbilityRange"]
-shape = SubResource("CircleShape2D_vgqql")
-
-[node name="TimerContainer" type="Node" parent="."]
-
-[node name="Ability 1" type="Timer" parent="TimerContainer"]
-wait_time = 5.0
-one_shot = true
-
-[node name="Ability 2" type="Timer" parent="TimerContainer"]
-wait_time = 10.0
-one_shot = true
-
-[node name="Ability 3" type="Timer" parent="TimerContainer"]
-one_shot = true
-
-[node name="Ability 4" type="Timer" parent="TimerContainer"]
-one_shot = true
-
-[node name="Ability 5" type="Timer" parent="TimerContainer"]
-one_shot = true
-
-[node name="Ability 6" type="Timer" parent="TimerContainer"]
-one_shot = true
-
-[node name="Ability 7" type="Timer" parent="TimerContainer"]
-one_shot = true
-
-[node name="Ability 8" type="Timer" parent="TimerContainer"]
-one_shot = true
-
-[connection signal="timeout" from="TimerContainer/Ability 1" to="." method="remove_cooldown" binds= [1]]
-[connection signal="timeout" from="TimerContainer/Ability 2" to="." method="remove_cooldown" binds= [2]]
-[connection signal="timeout" from="TimerContainer/Ability 3" to="." method="remove_cooldown" binds= [3]]
-[connection signal="timeout" from="TimerContainer/Ability 4" to="." method="remove_cooldown" binds= [4]]
-[connection signal="timeout" from="TimerContainer/Ability 5" to="." method="remove_cooldown" binds= [5]]
-[connection signal="timeout" from="TimerContainer/Ability 6" to="." method="remove_cooldown" binds= [6]]
-[connection signal="timeout" from="TimerContainer/Ability 7" to="." method="remove_cooldown" binds= [7]]
-[connection signal="timeout" from="TimerContainer/Ability 8" to="." method="remove_cooldown" binds= [8]]

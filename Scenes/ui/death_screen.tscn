@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://gdyor4kn45ms"]
 
-[ext_resource type="Script" uid="uid://d06eccy2df4cp" path="res://Scripts/death_screen.gd" id="1_8hps1"]
+[ext_resource type="Script" uid="uid://d06eccy2df4cp" path="res://Scripts/ui/death_screen.gd" id="1_8hps1"]
 
 [node name="Death Screen" type="Control"]
 layout_mode = 3
