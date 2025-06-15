@@ -20,6 +20,7 @@ collision_mask = 2
 script = ExtResource("1_4oxmo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.6, 0.6)
 texture = ExtResource("2_4oxmo")
 
 [node name="Body" type="CollisionPolygon2D" parent="."]

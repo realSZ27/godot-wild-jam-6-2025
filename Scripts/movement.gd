@@ -25,3 +25,5 @@ func _process(_delta):
 		$Sprite2D.play("Player Walk")
 	else:
 		$Sprite2D.play("Player Idle")
+	if Input.is_action_pressed("Pause"):
+		get_tree().change_scene_to_file("res://Scenes/pause_menu.tscn")
