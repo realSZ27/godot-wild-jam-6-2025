@@ -1,6 +1,6 @@
 extends Control
 
-@onready var buttons := $PanelContainer/HBoxContainer.get_children()
+@onready var buttons := $"PanelContainer/Icon Container".get_children()
 signal active_ability(ability_index)
 
 func _input(event: InputEvent) -> void:
@@ -13,5 +13,8 @@ func toggle_slot(i: int) -> void:
 	buttons[i].button_pressed = !buttons[i].button_pressed
 	for index in range(buttons.size()):
 		if index != i:
-			buttons[index].button_pressed = false 
+			buttons[index].button_pressed = false
 	active_ability.emit(i)
+	
+	var shineSprite = buttons[i].get_child(1)
+	shineSprite.play("shine")
