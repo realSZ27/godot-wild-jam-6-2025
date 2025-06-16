@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var shadowslave: AudioStreamPlayer2D = $shadowslave
 @onready var camera := $Camera2D
 @onready var timers = $TimerContainer.get_children()
 @onready var los = $RayCast2D
@@ -51,6 +52,7 @@ func _process(_delta: float) -> void:
 				print_debug(los.is_colliding())
 				if !los.is_colliding():
 					position = get_global_mouse_position()
+				shadowslave.play()
 			8:
 				return
 		start_timer()
