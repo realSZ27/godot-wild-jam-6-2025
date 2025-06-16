@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 @onready var camera := $Camera2D
 @onready var timers = $TimerContainer.get_children()
 @onready var los = $RayCast2D
@@ -38,7 +37,7 @@ func _process(_delta: float) -> void:
 			3:
 				return
 			4:
-				return
+				Global.anger_amount = 4
 			5:
 				return
 			6:
@@ -59,7 +58,7 @@ func _process(_delta: float) -> void:
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed
 	# we should change look_at() later but it works for now
-	look_at(get_global_mouse_position())
+	#look_at(get_global_mouse_position())
 	move_and_slide()
 
 func remove_cooldown(ability: int):

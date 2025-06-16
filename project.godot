@@ -18,6 +18,7 @@ config/icon="res://Assets/images/icon.svg"
 [autoload]
 
 BetterTerrain="*res://addons/better-terrain/BetterTerrain.gd"
+Global="*res://Scripts/global.gd"
 
 [display]
 

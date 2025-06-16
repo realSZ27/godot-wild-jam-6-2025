@@ -1,7 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://cfn7myn3dpc2y"]
+[gd_scene load_steps=3 format=3 uid="uid://cfn7myn3dpc2y"]
 
 [ext_resource type="PackedScene" uid="uid://o56txj72d745" path="res://Scenes/ui/hotbar.tscn" id="1_bpa6r"]
+[ext_resource type="PackedScene" uid="uid://c6lqsgy4bw8rb" path="res://Scenes/ui/anger_meter.tscn" id="2_x2j5t"]
 
 [node name="GUI" type="CanvasLayer"]
 
 [node name="Hotbar" parent="." instance=ExtResource("1_bpa6r")]
+
+[node name="AngerMeter" parent="." instance=ExtResource("2_x2j5t")]
