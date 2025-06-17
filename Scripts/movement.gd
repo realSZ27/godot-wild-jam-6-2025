@@ -12,9 +12,6 @@ extends CharacterBody2D
 var speed := 400
 var active_ability = 0
 var cooldowns : Array[bool] = [0, 0, 0, 0, 0, 0, 0, 0]
-# had to use this because i couldnt get custom data for the tile layers
-# or add another physics layer
-var walls : Array[Vector2i] = [Vector2i(0, 3), Vector2i(1, 3), Vector2i(2, 3), Vector2i(3, 3), Vector2i(4, 3)]
 
 func _ready() -> void:
 	hotbar.active_ability.connect(ability_selector)
@@ -22,12 +19,11 @@ func _ready() -> void:
 func ability_selector(ability_index: int) -> void:
 	active_ability = ability_index
 
-
 func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("left click"):
 		if cooldowns[active_ability - 1]:
 			return
-			
+		print_debug("1")
 		match active_ability:
 			1:
 				return
@@ -63,7 +59,7 @@ func _process(_delta: float) -> void:
 				shadowslave.play()
 			8:
 				return
-		start_timer()
+		start_cooldown()
 	
 	var input_direction = Input.get_vector("left", "right", "up", "down")
 	velocity = input_direction * speed
@@ -72,8 +68,9 @@ func _process(_delta: float) -> void:
 	move_and_slide()
 
 func remove_cooldown(ability: int):
-	cooldowns[ability - 1] = 0
+	print_debug(str(ability - 1) + " cooldown ended")
+	cooldowns[ability - 1] = false
 
-func start_timer():
+func start_cooldown():
 	timers[active_ability - 1].start()
 	cooldowns[active_ability - 1] = true

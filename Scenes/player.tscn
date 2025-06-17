@@ -89,11 +89,9 @@ shape = SubResource("CircleShape2D_vgqql")
 [node name="TimerContainer" type="Node" parent="."]
 
 [node name="Ability 1" type="Timer" parent="TimerContainer"]
-wait_time = 5.0
 one_shot = true
 
 [node name="Ability 2" type="Timer" parent="TimerContainer"]
-wait_time = 10.0
 one_shot = true
 
 [node name="Ability 3" type="Timer" parent="TimerContainer"]
@@ -124,3 +122,12 @@ volume_db = -7.495
 autoplay = true
 attenuation = 0.0583145
 playback_type = 1
+
+[connection signal="timeout" from="TimerContainer/Ability 1" to="." method="remove_cooldown" binds= [1]]
+[connection signal="timeout" from="TimerContainer/Ability 2" to="." method="remove_cooldown" binds= [2]]
+[connection signal="timeout" from="TimerContainer/Ability 3" to="." method="remove_cooldown" binds= [3]]
+[connection signal="timeout" from="TimerContainer/Ability 4" to="." method="remove_cooldown" binds= [4]]
+[connection signal="timeout" from="TimerContainer/Ability 5" to="." method="remove_cooldown" binds= [5]]
+[connection signal="timeout" from="TimerContainer/Ability 6" to="." method="remove_cooldown" binds= [6]]
+[connection signal="timeout" from="TimerContainer/Ability 7" to="." method="remove_cooldown" binds= [7]]
+[connection signal="timeout" from="TimerContainer/Ability 8" to="." method="remove_cooldown" binds= [8]]
