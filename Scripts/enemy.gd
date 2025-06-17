@@ -12,25 +12,19 @@ func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
 
 func _physics_process(_delta: float) -> void:
-	# update cooldown based on anger
-	var timer_time: float = 0.16
-	var anger = Global.anger_amount
-	if anger >= 0 and anger <= 6:
-		timer_time = 0.16
-	elif anger >= 7 and anger <= 22:
-		timer_time = 0.08
-	elif anger >= 23 and anger <= 27:
-		timer_time = 0.04
-	
 	ray.target_position = ray.to_local(player.global_position)
-	var current_frame = $AnimatedSprite2D.frame;
 	
-	# turns off lights so you cant see them through walls
-	if ray.is_colliding() and !ray.get_collider().is_in_group("environment"):
-		$Lights.visible = true
-	else:
-		$Lights.visible = false
+	light_calc()
+	distance_calc($AnimatedSprite2D.frame, cooldown_calc())
 	
+	# movement
+	if $AnimatedSprite2D.frame == 21:
+		var dir = to_local(nav_agent.get_next_path_position()).normalized()
+		velocity = dir * speed
+		move_and_slide()
+
+# calculates anger, detection, and death
+func distance_calc(current_frame: int, timer_time: float):
 	var vector_distance = player.global_position - global_position
 	var distance_length = vector_distance.length()
 
@@ -51,13 +45,27 @@ func _physics_process(_delta: float) -> void:
 				start_cooldown(timer_time)
 	elif distance_length < 60:
 		get_tree().change_scene_to_file("res://Scenes/ui/death_screen.tscn")
-	
-	if current_frame == 21:
-		# pathfinding
-		var dir = to_local(nav_agent.get_next_path_position()).normalized()
-		velocity = dir * speed
-		move_and_slide()
 
+# calculates the length of the detection meter cooldown
+func cooldown_calc() -> float:
+	# update cooldown based on anger
+	var timer_time: float = 0.16
+	var anger = Global.anger_amount
+	if anger >= 0 and anger <= 6:
+		timer_time = 0.16
+	elif anger >= 7 and anger <= 22:
+		timer_time = 0.08
+	elif anger >= 23 and anger <= 27:
+		timer_time = 0.04
+	return timer_time
+
+# turns on/off the lights
+func light_calc():
+	# turns off lights so you cant see them through walls
+	if ray.is_colliding() and !ray.get_collider().is_in_group("environment"):
+		$Lights.visible = true
+	else:
+		$Lights.visible = false
 
 func start_cooldown(timer_time: float):
 	is_cooldown = true
