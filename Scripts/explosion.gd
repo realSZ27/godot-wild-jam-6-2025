@@ -1,7 +1,17 @@
 extends Node2D
 
+var has_emitted: bool = false
+
 func _ready():
-	print("futa")	 
-	for body in $Range.get_overlapping_bodies():
+	$AnimatedSprite2D.play()
+
+func _physics_process(_delta):
+	if has_emitted:
+		return
+	for body in $ExplosionRange.get_overlapping_bodies():
 		if body.is_in_group("opp"):
-			Global.explosion.emit(body)
+			has_emitted = true
+			Global.explosion.emit($".", body)
+
+func _on_animated_sprite_2d_animation_finished():
+	queue_free()

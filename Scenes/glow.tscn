@@ -1,7 +1,7 @@
 [gd_scene load_steps=3 format=3 uid="uid://koqmo6lr185y"]
 
 [ext_resource type="Texture2D" uid="uid://mqhhcu07vl7h" path="res://Assets/images/2d_lights_and_shadows_neutral_point_light.webp" id="1_ohs8y"]
-[ext_resource type="Script" uid="uid://c6f36marhkxp2" path="res://Scripts/glow.gd" id="2_mewdk"]
+[ext_resource type="Script" path="res://Scenes/glow.gd" id="2_mewdk"]
 
 [node name="Glow" type="PointLight2D"]
 shadow_enabled = true
