@@ -1,9 +1,10 @@
-[gd_scene load_steps=13 format=3 uid="uid://cd3jtnc7tho6y"]
+[gd_scene load_steps=14 format=3 uid="uid://cd3jtnc7tho6y"]
 
 [ext_resource type="Script" uid="uid://cwjtftijex5s5" path="res://Scripts/movement.gd" id="1_onrkg"]
 [ext_resource type="Texture2D" uid="uid://bgvhvwotk11ib" path="res://Assets/images/character.png" id="2_6t5aa"]
 [ext_resource type="Texture2D" uid="uid://mqhhcu07vl7h" path="res://Assets/images/2d_lights_and_shadows_neutral_point_light.webp" id="3_i3pqv"]
 [ext_resource type="Script" uid="uid://bv4d8vmmbgo4j" path="res://Scripts/playerSprite.gd" id="3_vgqql"]
+[ext_resource type="AudioStream" uid="uid://bpn5ynuhilrbr" path="res://addons/Sounds/Footstep.wav" id="5_fkybt"]
 [ext_resource type="AudioStream" uid="uid://dx14e6sk6l2gx" path="res://addons/Sounds/ShadowSlave.wav" id="6_x3wgy"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_onrkg"]
@@ -116,3 +117,10 @@ one_shot = true
 [node name="shadowslave" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("6_x3wgy")
 volume_db = -10.266
+
+[node name="footstep" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("5_fkybt")
+volume_db = -7.495
+autoplay = true
+attenuation = 0.0583145
+playback_type = 1

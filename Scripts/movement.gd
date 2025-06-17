@@ -7,6 +7,7 @@ extends CharacterBody2D
 @onready var hotbar = get_tree().get_first_node_in_group("Hotbar")
 @onready var tilemap = get_tree().get_first_node_in_group("environment")
 @onready var light = preload("res://Scenes/glow.tscn")
+@onready var explosion = preload("res://Scenes/explosion.tscn")
 
 var speed := 400
 var active_ability = 0
@@ -40,7 +41,14 @@ func _process(_delta: float) -> void:
 			4:
 				Global.anger_amount = 4
 			5:
-				return
+				los.target_position = los.to_local(get_global_mouse_position())
+				los.force_raycast_update()
+				print_debug(los.is_colliding())
+				if !los.is_colliding():
+					var new_explosion = explosion.instantiate()
+					new_explosion.position = get_global_mouse_position()
+					tilemap.add_child(new_explosion)
+					print("added explosion")
 			6:
 				return
 			7:

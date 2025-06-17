@@ -180,7 +180,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[node name="Opp" type="CharacterBody2D"]
+[node name="Opp" type="CharacterBody2D" groups=["opp"]]
 physics_interpolation_mode = 1
 collision_mask = 2
 motion_mode = 1

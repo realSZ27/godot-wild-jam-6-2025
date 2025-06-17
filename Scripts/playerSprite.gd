@@ -1,5 +1,7 @@
 extends AnimatedSprite2D
 
+@onready var footstep: AudioStreamPlayer2D = $"../footstep"
+
 # I LOVE JANK CODE 😁
 func _process(_delta):
 	if Input.is_action_pressed("right"):

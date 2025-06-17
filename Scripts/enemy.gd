@@ -8,8 +8,10 @@ var fov = PI / 2
 var speed := 450.0
 var is_cooldown := false
 
+
 func _ready() -> void:
 	player = get_tree().get_first_node_in_group("Player")
+	Global.explosion.connect(_explosion)
 
 func _physics_process(_delta: float) -> void:
 	ray.target_position = ray.to_local(player.global_position)
@@ -79,3 +81,8 @@ func _on_timer_timeout():
 
 func _on_calc_path_timer_timeout():
 	make_path()
+func _explosion(body):
+	nav_agent.target_position = body.global_position
+	var dir = to_local(nav_agent.get_next_path_position()).normalized()
+	velocity = dir * speed
+	move_and_slide()
