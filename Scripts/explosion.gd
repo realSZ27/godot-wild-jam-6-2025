@@ -1,17 +1,13 @@
 extends Node2D
 
-var has_emitted: bool = false
 
 func _ready():
 	$AnimatedSprite2D.play()
-
-func _physics_process(_delta):
-	if has_emitted:
-		return
+	#you gotta give it time for it to detect the enemies
+	await get_tree().create_timer(0.1).timeout
 	for body in $ExplosionRange.get_overlapping_bodies():
 		if body.is_in_group("opp"):
-			has_emitted = true
-			Global.explosion.emit(self, body)
+			body.queue_free()
 
 func _on_animated_sprite_2d_animation_finished():
 	queue_free()
