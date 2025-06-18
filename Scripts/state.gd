@@ -1,7 +1,8 @@
 extends Node
 class_name State
 
-signal Transitioned
+@warning_ignore("unused_signal") signal Transitioned
+var player: CharacterBody2D
 
 func enter():
 	pass

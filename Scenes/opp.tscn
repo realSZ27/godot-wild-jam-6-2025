@@ -1,11 +1,12 @@
-[gd_scene load_steps=33 format=3 uid="uid://btll2n4er5n1d"]
+[gd_scene load_steps=34 format=3 uid="uid://btll2n4er5n1d"]
 
 [ext_resource type="Script" uid="uid://cyhdu0x4sippk" path="res://Scripts/enemy.gd" id="1_4oxmo"]
 [ext_resource type="Texture2D" uid="uid://xcqbg2cae1b7" path="res://Assets/images/icon.svg" id="2_4oxmo"]
 [ext_resource type="Texture2D" uid="uid://mqhhcu07vl7h" path="res://Assets/images/2d_lights_and_shadows_neutral_point_light.webp" id="3_r5pj3"]
 [ext_resource type="Texture2D" uid="uid://d4nelb43h4rlw" path="res://Assets/images/ui/detection_meter.png" id="4_vkm20"]
 [ext_resource type="Script" uid="uid://bxboixy8wvx4f" path="res://Scripts/EnemyStates/state_machine.gd" id="5_vjlaf"]
-[ext_resource type="Script" uid="uid://dv6e4o04ojlcc" path="res://Scripts/EnemyStates/patrol.gd" id="6_reu4u"]
+[ext_resource type="Script" uid="uid://dv6e4o04ojlcc" path="res://Scripts/EnemyStates/chase.gd" id="6_reu4u"]
+[ext_resource type="Script" uid="uid://buqy3843p1hl" path="res://Scripts/EnemyStates/patrol.gd" id="7_i34cp"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vkm20"]
 radius = 38.0132
@@ -223,7 +224,6 @@ sprite_frames = SubResource("SpriteFrames_k6nx0")
 animation = &"detection_meter"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
-simplify_path = true
 debug_enabled = true
 
 [node name="Timers" type="Node" parent="."]
@@ -234,23 +234,26 @@ one_shot = true
 
 [node name="CalcPathTimer" type="Timer" parent="Timers"]
 wait_time = 0.1
-autostart = true
 
 [node name="PauseAtLocationTimer" type="Timer" parent="Timers"]
 wait_time = 5.0
 
 [node name="State Machine" type="Node" parent="." node_paths=PackedStringArray("initial_state", "enemy")]
 script = ExtResource("5_vjlaf")
-initial_state = NodePath("EnemyPatrol")
+initial_state = NodePath("Patrol")
 enemy = NodePath("..")
-speed = 450.0
+speed = 200.0
 
-[node name="EnemyPatrol" type="Node" parent="State Machine"]
+[node name="Chase" type="Node" parent="State Machine"]
 script = ExtResource("6_reu4u")
 metadata/_custom_type_script = "uid://dv6e4o04ojlcc"
 
-[connection signal="path_changed" from="NavigationAgent2D" to="State Machine/EnemyPatrol" method="_on_navigation_agent_2d_path_changed"]
-[connection signal="target_reached" from="NavigationAgent2D" to="State Machine/EnemyPatrol" method="_on_navigation_agent_2d_target_reached"]
-[connection signal="timeout" from="Timers/CooldownTimer" to="State Machine/EnemyPatrol" method="_on_cooldown_timer_timeout"]
-[connection signal="timeout" from="Timers/CalcPathTimer" to="State Machine/EnemyPatrol" method="_on_calc_path_timer_timeout"]
-[connection signal="timeout" from="Timers/PauseAtLocationTimer" to="State Machine/EnemyPatrol" method="_on_pause_at_location_timer_timeout"]
+[node name="Patrol" type="Node" parent="State Machine"]
+script = ExtResource("7_i34cp")
+metadata/_custom_type_script = "uid://duoiri1j08iqe"
+
+[connection signal="path_changed" from="NavigationAgent2D" to="State Machine/Patrol" method="_on_navigation_agent_2d_path_changed"]
+[connection signal="target_reached" from="NavigationAgent2D" to="State Machine/Patrol" method="_on_navigation_agent_2d_target_reached"]
+[connection signal="timeout" from="Timers/CooldownTimer" to="State Machine/Patrol" method="_on_cooldown_timer_timeout"]
+[connection signal="timeout" from="Timers/CalcPathTimer" to="State Machine/Chase" method="_on_calc_path_timer_timeout"]
+[connection signal="timeout" from="Timers/PauseAtLocationTimer" to="State Machine/Patrol" method="_on_pause_at_location_timer_timeout"]

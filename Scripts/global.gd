@@ -4,7 +4,9 @@ extends Node
 # access it with Global.yourthing
 # its basically the same as a static class in java
 
-signal explosion(explosion, body)
+@warning_ignore("unused_signal") signal explosion(explosion, body)
+@warning_ignore("unused_signal") signal reparent_opp
+@warning_ignore("unused_signal") signal unparent_opp
 
 # anger stuff -----------------
 var anger_amount = 0

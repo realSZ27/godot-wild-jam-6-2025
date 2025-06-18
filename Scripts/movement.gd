@@ -23,7 +23,7 @@ func _process(_delta: float) -> void:
 	if Input.is_action_just_pressed("left click"):
 		if cooldowns[active_ability - 1]:
 			return
-		print_debug("1")
+		#print_debug("1")
 		match active_ability:
 			1:
 				return
@@ -39,12 +39,12 @@ func _process(_delta: float) -> void:
 			5:
 				los.target_position = los.to_local(get_global_mouse_position())
 				los.force_raycast_update()
-				print_debug(los.is_colliding())
+				#print_debug(los.is_colliding())
 				if !los.is_colliding():
 					var new_explosion = explosion.instantiate()
 					new_explosion.position = get_global_mouse_position()
 					tilemap.add_child(new_explosion)
-					print("added explosion")
+					#print("added explosion")
 			6:
 				return
 			7:
@@ -53,7 +53,7 @@ func _process(_delta: float) -> void:
 				# effect it just is quicker to use
 				los.target_position = los.to_local(get_global_mouse_position())
 				los.force_raycast_update()
-				print_debug(los.is_colliding())
+				#print_debug(los.is_colliding())
 				if !los.is_colliding():
 					position = get_global_mouse_position()
 				shadowslave.play()
@@ -68,7 +68,7 @@ func _process(_delta: float) -> void:
 	move_and_slide()
 
 func remove_cooldown(ability: int):
-	print_debug(str(ability - 1) + " cooldown ended")
+	#print_debug(str(ability - 1) + " cooldown ended")
 	cooldowns[ability - 1] = false
 
 func start_cooldown():

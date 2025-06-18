@@ -11,7 +11,7 @@ func _physics_process(_delta):
 	for body in $ExplosionRange.get_overlapping_bodies():
 		if body.is_in_group("opp"):
 			has_emitted = true
-			Global.explosion.emit($".", body)
+			Global.explosion.emit(self, body)
 
 func _on_animated_sprite_2d_animation_finished():
 	queue_free()
