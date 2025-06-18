@@ -13,23 +13,25 @@ func _physics_process(delta):
 		for grandchild in child.get_children():
 			if grandchild is PathFollow2D:
 				grandchild.progress_ratio += delta * speed
+				if grandchild.get_child_count() > 0:
+					var opp = grandchild.get_child(0) as CharacterBody2D
+					opp.velocity = Vector2.ZERO
 
-func _reparent_opp(target_opp):
+func _reparent_opp(target_opp: CharacterBody2D):
 	for child in get_all_descendants(self):
 		if child == target_opp:
 			var opp := child as CharacterBody2D
 			var parent_node = opp_table.get(opp).get("parent") as PathFollow2D
 			parent_node.progress_ratio = opp_table.get(opp).get("progress_ratio")
 			opp.reparent(parent_node)
-			opp.global_position = opp_table.get(opp).get("last_position")
-			opp.velocity = Vector2.ZERO
 
 func _unparent_opp(target_opp: CharacterBody2D):
 	for child in get_all_descendants(self):
 		if child == target_opp:
 			var parent = child.get_parent()
-			opp_table[child] = { "parent": parent, "progress_ratio": parent.progress_ratio, "last_position": child.global_position }
-			child.reparent(self)
+			if parent is PathFollow2D:
+				opp_table[child] = { "parent": parent, "progress_ratio": parent.progress_ratio }
+				child.reparent(self)
 
 func get_all_descendants(node):
 	var all_nodes := []

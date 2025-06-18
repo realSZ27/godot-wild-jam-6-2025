@@ -7,6 +7,7 @@ extends Node
 @warning_ignore("unused_signal") signal explosion(explosion, body)
 @warning_ignore("unused_signal") signal reparent_opp
 @warning_ignore("unused_signal") signal unparent_opp
+var last_position: Vector2
 
 # anger stuff -----------------
 var anger_amount = 0

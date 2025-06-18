@@ -29,17 +29,20 @@ func _ready():
 		current_state = initial_state
 
 func _process(delta: float):
+	#print(str(current_state))
 	if current_state:
 		current_state.update(delta)
+	else:
+		push_error("no current state found")
 	
 func _physics_process(delta: float):
-	print("current state: " + str(current_state))
 	light_calc()
 	if current_state:
 		current_state.physics_update(delta)
+	else:
+		push_error("no current state found")
 
 func _on_child_transitioned(state: State, new_state_name: String):
-	print("transitioning")
 	if state != current_state:
 		push_error("state passed does not match new state")
 		return

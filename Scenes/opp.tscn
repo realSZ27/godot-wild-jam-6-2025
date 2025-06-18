@@ -1,4 +1,4 @@
-[gd_scene load_steps=34 format=3 uid="uid://btll2n4er5n1d"]
+[gd_scene load_steps=35 format=3 uid="uid://btll2n4er5n1d"]
 
 [ext_resource type="Script" uid="uid://cyhdu0x4sippk" path="res://Scripts/enemy.gd" id="1_4oxmo"]
 [ext_resource type="Texture2D" uid="uid://xcqbg2cae1b7" path="res://Assets/images/icon.svg" id="2_4oxmo"]
@@ -7,6 +7,7 @@
 [ext_resource type="Script" uid="uid://bxboixy8wvx4f" path="res://Scripts/EnemyStates/state_machine.gd" id="5_vjlaf"]
 [ext_resource type="Script" uid="uid://dv6e4o04ojlcc" path="res://Scripts/EnemyStates/chase.gd" id="6_reu4u"]
 [ext_resource type="Script" uid="uid://buqy3843p1hl" path="res://Scripts/EnemyStates/patrol.gd" id="7_i34cp"]
+[ext_resource type="Script" uid="uid://t3w7afaqn6pk" path="res://Scripts/EnemyStates/return.gd" id="8_r0n5m"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_vkm20"]
 radius = 38.0132
@@ -252,8 +253,14 @@ metadata/_custom_type_script = "uid://dv6e4o04ojlcc"
 script = ExtResource("7_i34cp")
 metadata/_custom_type_script = "uid://duoiri1j08iqe"
 
+[node name="Return" type="Node" parent="State Machine"]
+script = ExtResource("8_r0n5m")
+metadata/_custom_type_script = "uid://buqy3843p1hl"
+
 [connection signal="path_changed" from="NavigationAgent2D" to="State Machine/Patrol" method="_on_navigation_agent_2d_path_changed"]
 [connection signal="target_reached" from="NavigationAgent2D" to="State Machine/Patrol" method="_on_navigation_agent_2d_target_reached"]
+[connection signal="target_reached" from="NavigationAgent2D" to="State Machine/Return" method="_on_navigation_agent_2d_target_reached"]
 [connection signal="timeout" from="Timers/CooldownTimer" to="State Machine/Patrol" method="_on_cooldown_timer_timeout"]
+[connection signal="timeout" from="Timers/CooldownTimer" to="State Machine/Return" method="_on_cooldown_timer_timeout"]
 [connection signal="timeout" from="Timers/CalcPathTimer" to="State Machine/Chase" method="_on_calc_path_timer_timeout"]
 [connection signal="timeout" from="Timers/PauseAtLocationTimer" to="State Machine/Patrol" method="_on_pause_at_location_timer_timeout"]

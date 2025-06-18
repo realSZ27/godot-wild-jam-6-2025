@@ -1,6 +1,7 @@
 extends EnemyState
-class_name EnemyPatrol
+class_name EnemyReturn
 
+@onready var nav_agent := $"../../NavigationAgent2D" as NavigationAgent2D
 @onready var detection_meter = $"../../DetectionMeter"
 @onready var ray = $"../../RayCast2D"
 var is_cooldown: bool
@@ -8,14 +9,19 @@ var is_cooldown: bool
 func enter():
 	Global.explosion.connect(_explosion)
 	detection_meter.frame = 0
-	
+
 func exit():
-	Global.last_position = enemy.global_position
+	print("this does nothing")
 
 func physics_update(_delta):
+	nav_agent.target_position = Global.last_position
 	distance_calc(detection_meter.frame, cooldown_calc())
 	if detection_meter.frame == 21:
 		Transitioned.emit(self, "Chase")
+	
+	var next_pos = nav_agent.get_next_path_position()
+	var dir = (next_pos - enemy.global_position).normalized()
+	enemy.velocity = dir * speed
 
 # calculates anger, detection, and death (based on distance)
 func distance_calc(current_frame: int, timer_time: float):
@@ -59,6 +65,10 @@ func start_cooldown(timer_time: float):
 
 func _on_cooldown_timer_timeout():
 	is_cooldown = false
+	
+func _on_navigation_agent_2d_target_reached():
+	Global.reparent_opp.emit(enemy)
+	Transitioned.emit(self, "Patrol")
 	
 func _explosion(explosion, body):
 	print("EXXPLOOOOOOSION")
