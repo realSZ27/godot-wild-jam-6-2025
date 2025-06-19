@@ -216,6 +216,7 @@ texture = SubResource("GradientTexture2D_vkm20")
 position = Vector2(0, -2)
 scale = Vector2(2, -2.024)
 color = Color(1, 0.0392157, 0.0235294, 1)
+shadow_enabled = true
 texture = ExtResource("3_r5pj3")
 
 [node name="DetectionMeter" type="AnimatedSprite2D" parent="."]
@@ -225,6 +226,7 @@ sprite_frames = SubResource("SpriteFrames_k6nx0")
 animation = &"detection_meter"
 
 [node name="NavigationAgent2D" type="NavigationAgent2D" parent="."]
+avoidance_enabled = true
 debug_enabled = true
 
 [node name="Timers" type="Node" parent="."]

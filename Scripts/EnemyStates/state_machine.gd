@@ -65,7 +65,7 @@ func light_calc():
 	var lights = $"../Lights"
 	ray.target_position = ray.to_local(player.global_position)
 	if lights.ready:
-		if ray.is_colliding() and !ray.get_collider().is_in_group("environment"):
+		if ray.is_colliding() and ray.get_collider().is_in_group("Player"):
 			lights.visible = true
 		else:
 			lights.visible = false

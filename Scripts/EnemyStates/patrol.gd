@@ -5,8 +5,10 @@ class_name EnemyPatrol
 @onready var ray = $"../../RayCast2D"
 var is_cooldown: bool
 
-func enter():
+func _ready():
 	Global.explosion.connect(_explosion)
+
+func enter():
 	detection_meter.frame = 0
 	
 func exit():
