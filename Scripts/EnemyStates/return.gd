@@ -6,12 +6,11 @@ class_name EnemyReturn
 @onready var ray = $"../../RayCast2D"
 var is_cooldown: bool
 
-func enter():
+func _ready():
 	Global.explosion.connect(_explosion)
-	detection_meter.frame = 0
 
-func exit():
-	print("this does nothing")
+func enter():
+	detection_meter.frame = 0
 
 func physics_update(_delta):
 	nav_agent.target_position = Global.last_position
